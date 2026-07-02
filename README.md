@@ -260,6 +260,20 @@ Example valid messages:
 - `fix: handle missing password`
 - `chore: update dependencies`
 
+Common commit types you can use:
+
+- `feat:` for a new feature
+- `fix:` for a bug fix
+- `docs:` for documentation-only changes
+- `style:` for formatting or style-only changes
+- `refactor:` for code restructuring without changing behavior
+- `perf:` for performance improvements
+- `test:` for test updates
+- `build:` for build system or dependency changes
+- `ci:` for CI/CD changes
+- `chore:` for maintenance work
+- `revert:` for reverting a previous commit
+
 The hook that uses this file is `.husky/commit-msg`.
 
 ## 9. Add cspell
