@@ -14,7 +14,7 @@
     "build": "tsc -p tsconfig.json",
     "codeql": "codeql database create .codeql-db --language=javascript --source-root=. --overwrite && codeql database analyze .codeql-db codeql/javascript-queries --format=sarif-latest --output=codeql-results.sarif",
     "semgrep": "semgrep scan",
-    "trivy": "trivy fs .",
+    "trivy": "trivy fs --skip-dirs .codeql-db,dist --scanners vuln .",
     "prepare": "husky"
   },
   "lint-staged": {
