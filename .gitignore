@@ -34,3 +34,5 @@ Thumbs.db
 # generated / temporary
 tmp/
 temp/
+
+codeql-results.sarif
