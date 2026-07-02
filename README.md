@@ -383,8 +383,16 @@ Trivy scans the filesystem for vulnerabilities and misconfigurations.
 Script:
 
 ```json
-"trivy": "trivy fs ."
+"trivy": "trivy fs --skip-dirs .codeql-db,dist --scanners vuln ."
 ```
+
+Why this repo uses skip rules:
+
+- `.codeql-db/` contains generated CodeQL database logs and can be large
+- `dist/` is generated build output and does not need repeated source scanning
+- secret scanning is already handled by `gitleaks` in the pre-commit hook
+
+That means Trivy focuses on vulnerability scanning instead of re-scanning generated artifacts.
 
 ### 12.4 Gitleaks
 
@@ -461,6 +469,7 @@ Why the heavier checks happen at push time:
 - pushing is less frequent than saving files
 - security scans can take longer
 - this keeps the commit workflow fast while still protecting the branch
+- generated CodeQL and build output are excluded from Trivy so the scan stays useful
 
 ## 14. Make the Project Build to `dist/`
 
@@ -509,7 +518,7 @@ These are the scripts in [`package.json`](./package.json):
 - `semgrep`
   - runs Semgrep scan
 - `trivy`
-  - runs Trivy filesystem scan
+  - runs Trivy filesystem vulnerability scan with generated folders excluded
 - `prepare`
   - installs Husky hooks
 
@@ -560,6 +569,12 @@ Install the Trivy CLI, then verify:
 
 ```powershell
 trivy --version
+```
+
+If you are maintaining this repo, make sure the scan command matches the project script:
+
+```bash
+trivy fs --skip-dirs .codeql-db,dist --scanners vuln .
 ```
 
 ### Gitleaks
