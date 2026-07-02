@@ -10,7 +10,9 @@
     "tsparser",
     "sarif",
     "semgrep",
-    "fayis"
+    "PYTHONUTF",
+    "PYTHONIOENCODING",
+    "pipx"
   ],
   "ignorePaths": ["node_modules", "dist", "build", ".git"]
 }
