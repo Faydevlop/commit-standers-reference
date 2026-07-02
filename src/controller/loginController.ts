@@ -1,5 +1,9 @@
 import { Request, Response } from 'express';
 
+interface test {
+  data: string;
+}
+
 export const showLoginPage = (_req: Request, res: Response): void => {
   res.status(200).json({
     success: false,
