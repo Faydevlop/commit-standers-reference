@@ -6,15 +6,38 @@
   "scripts": {
     "start": "ts-node server.ts",
     "dev": "ts-node server.ts",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "spellcheck": "cspell \"**/*.{ts,js,json,md}\"",
+    "typecheck": "tsc --noEmit",
+    "build": "tsc --noEmit",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.{ts,js}": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*.{json,md}": [
+      "prettier --write"
+    ]
   },
   "dependencies": {
     "express": "^4.21.2"
   },
   "devDependencies": {
+    "@commitlint/cli": "^21.2.0",
+    "@commitlint/config-conventional": "^21.2.0",
     "@types/express": "^5.0.1",
     "@types/node": "^22.10.1",
-    "prettier": "^3.3.3",
+    "@typescript-eslint/eslint-plugin": "^8.62.1",
+    "@typescript-eslint/parser": "^8.62.1",
+    "cspell": "^10.0.1",
+    "eslint": "^10.6.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.0.8",
+    "prettier": "^3.9.4",
     "ts-node": "^10.9.2",
     "typescript": "^5.7.3"
   }
