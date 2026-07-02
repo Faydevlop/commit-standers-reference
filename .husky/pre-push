@@ -1,9 +1,8 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
-echo "Running Semgrep..."
+echo "Running pre-push hook..."
+
 npm run semgrep
-
-echo "Running Trivy..."
 npm run trivy
 
 echo "Running CodeQL..."

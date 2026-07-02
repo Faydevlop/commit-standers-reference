@@ -5,6 +5,7 @@ node_modules/
 dist/
 build/
 coverage/
+.codeql-db/
 
 # logs
 npm-debug.log*
@@ -16,6 +17,10 @@ pnpm-debug.log*
 .env
 .env.local
 .env.*.local
+
+# security reports
+gitleaks-report*.json
+*/gitleaks-report.json
 
 # TypeScript
 *.tsbuildinfo
