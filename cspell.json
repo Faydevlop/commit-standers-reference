@@ -1,6 +1,15 @@
 {
   "version": "0.2",
   "language": "en",
-  "words": ["ts-node", "precommit", "commitlint", "lint-staged", "gitleaks", "tsparser"],
+  "words": [
+    "ts-node",
+    "precommit",
+    "commitlint",
+    "lint-staged",
+    "gitleaks",
+    "tsparser",
+    "sarif",
+    "semgrep"
+  ],
   "ignorePaths": ["node_modules", "dist", "build", ".git"]
 }

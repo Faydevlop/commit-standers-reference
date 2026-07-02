@@ -1,2 +1,16 @@
-npm run typecheck
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo "Running Semgrep..."
+npm run semgrep
+
+echo "Running Trivy..."
+npm run trivy
+
+echo "Running CodeQL..."
+npm run codeql
+
+echo "Running build..."
 npm run build
+
+echo "Pre-push checks passed."

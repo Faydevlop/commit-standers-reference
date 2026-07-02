@@ -12,6 +12,9 @@
     "spellcheck": "cspell \"**/*.{ts,js,json,md}\"",
     "typecheck": "tsc --noEmit",
     "build": "tsc --noEmit",
+    "codeql": "codeql database create .codeql-db --language=javascript --source-root=. --overwrite && codeql database analyze .codeql-db codeql/javascript-queries --format=sarif-latest --output=codeql-results.sarif",
+    "semgrep": "semgrep scan",
+    "trivy": "trivy fs .",
     "prepare": "husky"
   },
   "lint-staged": {
