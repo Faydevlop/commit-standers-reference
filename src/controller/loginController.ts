@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 
 interface test {
-  data: string;
+  data: any;
 }
 
 export const showLoginPage = (_req: Request, res: Response): void => {
