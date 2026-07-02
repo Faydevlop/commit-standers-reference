@@ -9,7 +9,8 @@
     "gitleaks",
     "tsparser",
     "sarif",
-    "semgrep"
+    "semgrep",
+    "fayis"
   ],
   "ignorePaths": ["node_modules", "dist", "build", ".git"]
 }
