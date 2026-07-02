@@ -2,6 +2,9 @@
 
 echo "Running pre-push hook..."
 
+export PYTHONUTF8=1
+export PYTHONIOENCODING=utf-8
+
 npm run semgrep
 npm run trivy
 
